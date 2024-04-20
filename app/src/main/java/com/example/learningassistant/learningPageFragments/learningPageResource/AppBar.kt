@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.example.mylearningasistant4.LearningPageFragments.LearningPageResource
+package com.example.learningassistant.learningPageFragments.learningPageResource
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

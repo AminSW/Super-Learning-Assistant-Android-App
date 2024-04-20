@@ -1,4 +1,4 @@
-package com.example.mylearningasistant4.LearningPageFragments.LearningPageResource
+package com.example.learningassistant.learningPageFragments.learningPageResource
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -24,6 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.learningassistant.BottomBar
 import com.example.learningassistant.ui.theme.detailColor
 
 val mainColor = Color(113,190,130)
