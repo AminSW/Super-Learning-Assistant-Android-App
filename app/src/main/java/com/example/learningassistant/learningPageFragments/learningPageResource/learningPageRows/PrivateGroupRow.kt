@@ -1,4 +1,4 @@
-package com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.LearningPageRows
+package com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -18,12 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.mylearningasistant4.DataClasses.LearningPageModels.PrivateGroupModel
-import com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.TextIconVertical
-import com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.mainColor
-import com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.notNotificationColor
-import com.example.mylearningasistant4.R
-import com.example.mylearningasistant4.containerColor
+import com.example.learningassistant.R
+import com.example.learningassistant.dataClasses.learningPageModels.PrivateGroupModel
+import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconVertical
+import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
+import com.example.learningassistant.learningPageFragments.learningPageResource.notNotificationColor
+import com.example.learningassistant.ui.theme.containerColor
 
 
 @Composable

@@ -1,4 +1,4 @@
-package com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.LearningPageRows
+package com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -21,7 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.learningassistant.learningPageFragments.learningPages.CourseInfoText
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.LearningPageModels.CourseGroupModel
+import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
+import com.example.learningassistant.learningPageFragments.learningPageResource.LinearProgressBar
 import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
 
