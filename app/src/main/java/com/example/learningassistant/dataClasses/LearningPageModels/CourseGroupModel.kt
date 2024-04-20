@@ -1,4 +1,4 @@
-package com.example.learningassistant.dataClasses.LearningPageModels
+package com.example.learningassistant.dataClasses.learningPageModels
 
 data class CourseGroupModel(
     val groupName       : String,
