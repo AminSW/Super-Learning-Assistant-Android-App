@@ -1,4 +1,4 @@
-package com.example.learningassistant.dataClasses.HomePageModels
+package com.example.learningassistant.dataClasses.homePageModels
 
 data class FeatureCourseGroupModel(
     val image: Int,

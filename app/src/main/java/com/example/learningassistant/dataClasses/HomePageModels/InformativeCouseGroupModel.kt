@@ -1,6 +1,6 @@
-package com.example.learningassistant.dataClasses.HomePageModels
+package com.example.learningassistant.dataClasses.homePageModels
 
-data class InformativeCouseGroupModel(
+data class InformativeCourseGroupModel(
     val content: String,
     val lessons: Int,
     val hours:   Int,
