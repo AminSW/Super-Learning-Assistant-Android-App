@@ -1,8 +1,7 @@
 package com.example.learningassistant.learningPageFragments.learningPages
 
-import com.example.learningassistant.dataClasses.LearningPageModels.CourseGroupModel
+import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
 import com.example.learningassistant.ui.theme.backgroundColorClassic
-import com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.LearningPageRows.CourseRow
 
 
 import androidx.compose.foundation.layout.Spacer
@@ -23,7 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.PageInterfaceForLearningPages
+import com.example.learningassistant.learningPageFragments.learningPageResource.PageInterfaceForLearningPages
+import com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows.CourseRow
 
 
 @ExperimentalMaterial3Api

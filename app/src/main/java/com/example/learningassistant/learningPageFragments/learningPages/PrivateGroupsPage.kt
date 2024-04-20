@@ -1,6 +1,6 @@
 package com.example.learningassistant.learningPageFragments.learningPages
 
-import com.example.learningassistant.dataClasses.LearningPageModels.PrivateGroupModel
+import com.example.learningassistant.dataClasses.learningPageModels.PrivateGroupModel
 import com.example.learningassistant.ui.theme.backgroundColorClassic
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.LearningPageRows.PrivateGroupsRow
-import com.example.mylearningasistant4.LearningPageFragments.LearningPageResource.PageInterfaceForLearningPages
+import com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows.PrivateGroupsRow
+import com.example.learningassistant.learningPageFragments.learningPageResource.PageInterfaceForLearningPages
 
 private val privateGroupList = ArrayList<PrivateGroupModel>()
 
