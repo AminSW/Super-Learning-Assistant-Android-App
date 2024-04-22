@@ -128,68 +128,70 @@ class InformativeCourses {
 
 
 
-    @Composable
-    private fun CourseImage(image : Int){
-        Surface(modifier = Modifier
-            .padding(15.dp)
-            .size(130.dp),
-            shape = RoundedCornerShape(15.dp)
-        ) {
-            Image(painter = painterResource(id = image),
-                contentDescription = null)
+}
+
+
+@Composable
+fun CourseImage(image : Int){
+    Surface(modifier = Modifier
+        .padding(15.dp)
+        .size(130.dp),
+        shape = RoundedCornerShape(15.dp)
+    ) {
+        Image(painter = painterResource(id = image),
+            contentDescription = null)
+    }
+}
+
+@Composable
+fun CourseTextIcon(icon: Int, iconColor: Color, text: String){
+    val width = (text.length * 9) + 35
+    TextIconHorizontal(
+        width = width,
+        height = 20,
+        padding = 0,
+        address = icon,
+        iconColor = iconColor,
+        backgroundColor = Color.Unspecified,
+        navController = null,
+        nextPage = "",
+        title = text,
+        fontSize = fontSizeDetails.value.toInt(),
+        fontWeight = FontWeight.W600,
+        color = detailColor
+    )
+}
+
+@Composable
+fun CourseMainText(content: String){
+    Text(text = content,
+        fontSize = fontSizeHeader,
+        fontWeight = FontWeight.W700,
+        modifier = Modifier.padding(10.dp, 5.dp))
+}
+
+@Composable
+fun CourseLessonAndHours(lessons: Int, hours: Int, minutes: Int){
+    Surface(modifier = Modifier
+        .width(260.dp)
+        .padding(0.dp, 0.dp, 0.dp, 0.dp),
+        color = Color.Unspecified) {
+        Row (horizontalArrangement = Arrangement.Absolute.Left){
+            CourseTextIcon(icon = R.drawable.book, iconColor = mainColor, text ="$lessons Lesson")
+            CourseTextIcon(icon = R.drawable.clock, iconColor = specialIconColor, text = "${hours}h $minutes min")
         }
     }
+}
 
-    @Composable
-    private fun CourseTextIcon(icon: Int, iconColor: Color, text: String){
-        val width = (text.length * 9) + 35
-        TextIconHorizontal(
-            width = width,
-            height = 20,
-            padding = 0,
-            address = icon,
-            iconColor = iconColor,
-            backgroundColor = Color.Unspecified,
-            navController = null,
-            nextPage = "",
-            title = text,
-            fontSize = fontSizeDetails.value.toInt(),
-            fontWeight = FontWeight.W600,
-            color = detailColor
-        )
-    }
-
-    @Composable
-    private fun CourseMainText(content: String){
-        Text(text = content,
-            fontSize = fontSizeHeader,
-            fontWeight = FontWeight.W700,
-            modifier = Modifier.padding(10.dp, 5.dp))
-    }
-
-    @Composable
-    private fun CourseLessonAndHours(lessons: Int, hours: Int, minutes: Int){
-        Surface(modifier = Modifier
-            .width(260.dp)
-            .padding(0.dp, 0.dp, 0.dp, 0.dp),
-            color = Color.Unspecified) {
-            Row (horizontalArrangement = Arrangement.Absolute.Left){
-                CourseTextIcon(icon = R.drawable.book, iconColor = mainColor, text ="$lessons Lesson")
-                CourseTextIcon(icon = R.drawable.clock, iconColor = specialIconColor, text = "${hours}h $minutes min")
-            }
-        }
-    }
-
-    @Composable
-    private fun CoursePriceAndEnroll(price: Int){
-        Surface(modifier = Modifier
-            .width(230.dp)
-            .padding(10.dp, 0.dp, 10.dp, 0.dp),
-            color = Color.Unspecified) {
-            Row (horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
-                Text(text = "$$price", color = priceColor, fontSize = fontSizeDetails, fontWeight = FontWeight.W700)
-                UnfilledButton(borderColor = mainColor, 3, context = "Enroll Now", mainColor, 30.dp, 15.dp, 0)
-            }
+@Composable
+private fun CoursePriceAndEnroll(price: Int){
+    Surface(modifier = Modifier
+        .width(230.dp)
+        .padding(10.dp, 0.dp, 10.dp, 0.dp),
+        color = Color.Unspecified) {
+        Row (horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
+            Text(text = "$$price", color = priceColor, fontSize = fontSizeDetails, fontWeight = FontWeight.W700)
+            UnfilledButton(borderColor = mainColor, 3, context = "Enroll Now", mainColor, 30.dp, 15.dp, 0)
         }
     }
 }

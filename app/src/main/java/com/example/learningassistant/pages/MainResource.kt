@@ -99,6 +99,23 @@ fun UnfilledButton(borderColor: Color, borderSize: Int, context: String, context
 }
 
 @Composable
+fun FilledButton(borderColor: Color, borderSize: Int, context: String, contextColor: Color, height: Dp, roundedShape: Dp, padding: Int) {
+
+    Button(
+        onClick = {},
+        border = BorderStroke(borderSize.dp, borderColor),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = contextColor,
+            contentColor = contextColor
+        ),
+        shape = RoundedCornerShape(20.dp),
+        modifier = Modifier.height(height).padding(padding.dp)
+    ) {
+        Text(text = context, fontSize = fontSizeMini)
+    }
+}
+
+@Composable
 fun TopicText(text: String, padding: Int){
     Text(text = text,
         fontSize = fontSizeMainHeader,
