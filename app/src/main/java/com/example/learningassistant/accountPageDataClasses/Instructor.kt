@@ -1,18 +1,16 @@
 package com.example.learningassistant.accountPageDataClasses
 
+import android.icu.text.ListFormatter.Width
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,18 +24,10 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
-import com.example.learningassistant.interfaceClasses.CourseImage
-import com.example.learningassistant.interfaceClasses.CourseLessonAndHours
-import com.example.learningassistant.interfaceClasses.CourseMainText
-import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
-import com.example.learningassistant.pages.FilledButton
 import com.example.learningassistant.ui.theme.detailColor
 import com.example.learningassistant.ui.theme.fontSizeDetails
-import com.example.learningassistant.ui.theme.fontSizeHeader
 import com.example.learningassistant.ui.theme.fontSizeHuge
-import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.fontSizeTopic
-import com.example.learningassistant.ui.theme.priceColor
 import com.example.learningassistant.ui.theme.fontSizeMainHeader
 
 class Instructor(
@@ -108,18 +98,39 @@ class Instructor(
                     aboutInstructor.ShowText(detailColor, fontSizeTopic)
                 }
             }
+
+            Surface(modifier = Modifier.fillMaxWidth())
+            {
+                Column()
+                {
+                    Surface()
+                    {
+                        InstructorCourseHolderColumn(
+                            backgroundColor = Color.White,
+                            width = 500,
+                            upSpacerPadding = 10,
+                            bottomSpacerPadding = 10,
+                            suggestedCourseList = popularCourses,
+                            objectHeight = 150.dp
+                        )
+                    }
+
+
+
+                }
+            }
         }
     }
 }
 
 @Composable
-fun InstructorCourseHolderColumn(backgroundColor: Color, with: Int,
+fun InstructorCourseHolderColumn(backgroundColor: Color, width: Int,
                                  upSpacerPadding: Int, bottomSpacerPadding: Int,
                                  suggestedCourseList: List<InformativeCourseGroupModel>,
                                  objectHeight: Dp
 ){
     Surface(color = backgroundColor, modifier = Modifier
-        .width((with + upSpacerPadding + bottomSpacerPadding).dp)
+        .width((width + upSpacerPadding + bottomSpacerPadding).dp)
         .fillMaxHeight()) {
         Column {
             Spacer(modifier = Modifier.padding(upSpacerPadding.dp))
