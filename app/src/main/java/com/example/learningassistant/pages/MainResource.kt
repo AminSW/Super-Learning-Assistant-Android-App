@@ -110,8 +110,9 @@ fun FilledButton(borderColor: Color, borderSize: Int, context: String, contextCo
         ),
         shape = RoundedCornerShape(20.dp),
         modifier = Modifier.height(height).padding(padding.dp)
-    ) {
-        Text(text = context, fontSize = fontSizeMini)
+    )
+    {
+        Text(text = context, fontSize = fontSizeMini, color = Color.White)
     }
 }
 

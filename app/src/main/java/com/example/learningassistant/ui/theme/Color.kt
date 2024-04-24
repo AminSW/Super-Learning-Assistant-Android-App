@@ -17,6 +17,7 @@ val backgroundColorClassic = Color(246, 247, 248)
 val specialIconColor = Color(252, 173, 32)
 val priceColor = Color(72,78,91)
 val detailColor = Color(100,104,116)
+val borderColor = Color(153, 153, 155)
 
 val fontSizeMini = 13.sp
 val fontSizeDetails = 15.sp

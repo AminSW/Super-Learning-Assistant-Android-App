@@ -2,10 +2,12 @@ package com.example.learningassistant.pages
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.learningassistant.accountPageDataClasses.Instructor
 import com.example.learningassistant.accountPageDataClasses.LimitedString
@@ -30,7 +32,7 @@ private val instructorObject = Instructor(
 fun AccountPage(navController: NavController, navControllerHost: NavController){
     getInformativeCoursesForAccountPage()
     PageInterfaceClassic(navControllerHost = navControllerHost, pageNumber = 4) {
-        Surface(modifier = Modifier.fillMaxWidth().background(Color.Blue))
+        Surface(modifier = Modifier.fillMaxWidth().padding(10.dp, 10.dp))
         {
             instructorObject.ShowThePage()
         }
