@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -25,16 +24,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.interfaceResources.ColorsOfButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconHorizontal
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.pages.TopicText
-import com.example.learningassistant.pages.UnfilledButton
 import com.example.learningassistant.ui.theme.detailColor
 import com.example.learningassistant.ui.theme.fontSizeDetails
 import com.example.learningassistant.ui.theme.fontSizeHeader
+import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
 import com.example.learningassistant.ui.theme.specialIconColor
 
@@ -47,7 +46,7 @@ class InformativeCourses {
                                    suggestedCourseList: List<InformativeCourseGroupModel>,
                                    objectHeight: Dp){
         Surface(color = backgroundColor, modifier = Modifier
-            .height((height+upSpacerPadding+bottomSpacerPadding).dp)
+            .height((height + upSpacerPadding + bottomSpacerPadding).dp)
             .fillMaxHeight(heightToPhone)
         ) {
             Column(verticalArrangement = Arrangement.SpaceAround) {
@@ -185,13 +184,26 @@ fun CourseLessonAndHours(lessons: Int, hours: Int, minutes: Int){
 
 @Composable
 private fun CoursePriceAndEnroll(price: Int){
+
+    val colorsOfButton = ColorsOfButton(mainColor, mainColor)
+    val unfilledButton = com.example.learningassistant.interfaceResources.UnfilledButton(
+        colors = colorsOfButton,
+        borderSize = 3,
+        height = 30.dp,
+        roundedShape = 15.dp,
+        padding = 0.dp
+    )
+
     Surface(modifier = Modifier
         .width(230.dp)
         .padding(10.dp, 0.dp, 10.dp, 0.dp),
         color = Color.Unspecified) {
         Row (horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
             Text(text = "$$price", color = priceColor, fontSize = fontSizeDetails, fontWeight = FontWeight.W700)
-            UnfilledButton(borderColor = mainColor, 3, context = "Enroll Now", mainColor, 30.dp, 15.dp, 0)
+            //UnfilledButton(borderColor = mainColor, 3, context = "Enroll Now", mainColor, 30.dp, 15.dp, 0)
+            unfilledButton.Show {
+                Text(text = "Enroll Now", fontSize = fontSizeMini)
+            }
         }
     }
 }

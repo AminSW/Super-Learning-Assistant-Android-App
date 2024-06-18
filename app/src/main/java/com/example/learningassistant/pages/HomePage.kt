@@ -29,16 +29,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.learningassistant.BottomBar
-import com.example.learningassistant.interfaceClasses.InformativeCourses
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.homePageModels.FeatureCourseGroupModel
 import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.interfaceClasses.InformativeCourses
+import com.example.learningassistant.interfaceResources.ColorsOfButton
+import com.example.learningassistant.interfaceResources.UnfilledButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.notNotificationColor
 import com.example.learningassistant.ui.theme.backgroundColorClassic
 import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
 import com.example.learningassistant.ui.theme.fontSizeDetails
 import com.example.learningassistant.ui.theme.fontSizeHeader
+import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
 
 private val suggestedCourses = ArrayList<InformativeCourseGroupModel>()
@@ -68,7 +71,9 @@ fun HomePage(navController: NavController, navControllerHost: NavController){
     getTopicsButton()
     getFeatureCourses()
     PageInterfaceForHomePage(navController = navController, navControllerHost = navControllerHost, pageNumber = 1) {
-        Surface (modifier = Modifier.padding(0.dp, 100.dp, 0.dp, 70.dp).fillMaxHeight()){
+        Surface (modifier = Modifier
+            .padding(0.dp, 100.dp, 0.dp, 70.dp)
+            .fillMaxHeight()){
             Column(verticalArrangement = Arrangement.Top) {
 
                 suggestedCourseOperator.InformativeCourseHolderRow(
@@ -175,13 +180,24 @@ fun FeatureCourseRow(model: FeatureCourseGroupModel){
 @Preview(showBackground = true)
 @Composable
 fun LazyGridUnfilledButton(){
+
+    val colorsOfButton = ColorsOfButton(notNotificationColor, Color.Black)
+    val unfilledButton = UnfilledButton(
+        colors = colorsOfButton,
+        borderSize = 1,
+        height = 30.dp,
+        roundedShape = 15.dp,
+        padding = 5.dp
+        )
     Surface(modifier = Modifier.padding(0.dp, 10.dp), color = Color.Unspecified) {
         LazyHorizontalStaggeredGrid(rows = StaggeredGridCells.Fixed(2),
             horizontalItemSpacing = 4.dp,
             verticalArrangement = Arrangement.spacedBy(5.dp),
             content = {
                 items(topicsList.size) {index ->
-                    UnfilledButton(borderColor = notNotificationColor, 1, context = topicsList[index], Color.Black, 30.dp, 15.dp, 5)
+                    unfilledButton.Show {
+                        Text(text = topicsList[index], fontSize = fontSizeMini)
+                    }
                 }
             }
         )
@@ -191,7 +207,10 @@ fun LazyGridUnfilledButton(){
 
 @Composable
 fun TopBarHomePage(navController: NavController){
-    val topBarCreator = TopBarCreator(navController, 100.dp, Alignment.CenterVertically, Arrangement.SpaceBetween, Modifier.fillMaxWidth().fillMaxHeight())
+    val topBarCreator = TopBarCreator(navController, 100.dp, Alignment.CenterVertically, Arrangement.SpaceBetween,
+        Modifier
+            .fillMaxWidth()
+            .fillMaxHeight())
     topBarCreator.TopBarClassic(
         imageId = R.drawable.ic_launcher_background,
         imageWidth = 85,//65

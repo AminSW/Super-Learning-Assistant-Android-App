@@ -14,7 +14,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
@@ -25,12 +24,12 @@ import com.example.learningassistant.dataClasses.homePageModels.InformativeCours
 import com.example.learningassistant.interfaceClasses.CourseImage
 import com.example.learningassistant.interfaceClasses.CourseLessonAndHours
 import com.example.learningassistant.interfaceClasses.CourseMainText
+import com.example.learningassistant.interfaceResources.ColorsOfButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
-import com.example.learningassistant.pages.FilledButton
 import com.example.learningassistant.ui.theme.borderColor
-import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
 import com.example.learningassistant.ui.theme.fontSizeDetails
+import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
 
 
@@ -77,15 +76,27 @@ fun InstructorCurseObject(
 
 @Composable
 private fun CoursePriceAndAddToCart(price: Int){
+
+    val colorsOfButton = ColorsOfButton(mainColor, mainColor)
+    val filledButton = com.example.learningassistant.interfaceResources.FilledButton(
+        colors = colorsOfButton,
+        borderSize = 3,
+        height = 30.dp,
+        roundedShape = 15.dp,
+        padding = 0.dp
+    )
+
     Surface(
         modifier = Modifier
-        .width(230.dp)
-        .padding(10.dp, 0.dp, 10.dp, 0.dp),
+            .width(230.dp)
+            .padding(10.dp, 0.dp, 10.dp, 0.dp),
         color = Color.Unspecified)
     {
         Row (horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
             Text(text = "$$price", color = priceColor, fontSize = fontSizeDetails, fontWeight = FontWeight.W700)
-            FilledButton(borderColor = mainColor, 3, context = "Add To Cart", mainColor, 30.dp, 15.dp, 0)
+            filledButton.Show {
+                Text(text = "Add To Cart", fontSize = fontSizeMini)
+            }
         }
     }
 }

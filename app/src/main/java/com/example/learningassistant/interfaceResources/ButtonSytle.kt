@@ -1,7 +1,6 @@
 package com.example.learningassistant.interfaceResources
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.PaddingValues
@@ -70,12 +69,15 @@ class ButtonBuilder() {
 
     @Composable
     fun Build(content: @Composable () -> Unit) {
-        val resolvedColors = ButtonDefaults.buttonColors(colors.borderColor, colors.contentColor, colors.borderColor, colors.contentColor)
+        var resolvedColors = ButtonDefaults.buttonColors(colors.borderColor, colors.contentColor, colors.borderColor, colors.contentColor)
+        if (style == Style.FILLED) resolvedColors = ButtonDefaults.buttonColors(colors.borderColor, colors.contentColor, colors.borderColor, colors.contentColor)
+        else if( style == Style.UNFILLED) resolvedColors = ButtonDefaults.outlinedButtonColors(Color.White, colors.contentColor, Color.White, colors.contentColor)
+
         val finalModifier = modifier
             .then(
                 when (style) {
-                    Style.FILLED -> Modifier.background(colors.borderColor)
-                    Style.UNFILLED -> Modifier.background(Color.White) // No background for outlined style
+                    Style.FILLED -> Modifier
+                    Style.UNFILLED -> Modifier// No background for outlined style
                     // Handle other styles as needed
                 }
             )
