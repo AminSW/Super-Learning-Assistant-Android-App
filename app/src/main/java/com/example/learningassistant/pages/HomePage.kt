@@ -25,13 +25,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.learningassistant.BottomBar
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.homePageModels.FeatureCourseGroupModel
-import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
 import com.example.learningassistant.interfaceClasses.InformativeCourses
 import com.example.learningassistant.interfaceResources.ColorsOfButton
 import com.example.learningassistant.interfaceResources.UnfilledButton
@@ -43,13 +42,12 @@ import com.example.learningassistant.ui.theme.fontSizeDetails
 import com.example.learningassistant.ui.theme.fontSizeHeader
 import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
+import com.example.learningassistant.viewModels.HomePageViewModel
 
-private val suggestedCourses = ArrayList<InformativeCourseGroupModel>()
+private val interfaceCreator = InterfaceCreator()
 private val suggestedCourseOperator = InformativeCourses()
 
-private val topicsList = ArrayList<String>()
-private val featureCourseList = ArrayList<FeatureCourseGroupModel>()
-private val interfaceCreator = InterfaceCreator()
+
 
 
 @Composable
@@ -67,9 +65,14 @@ fun PageInterfaceForHomePage(navController: NavController, navControllerHost: Na
 
 @Composable
 fun HomePage(navController: NavController, navControllerHost: NavController){
-    getInformativeCourses()
-    getTopicsButton()
-    getFeatureCourses()
+
+    val viewModel: HomePageViewModel = viewModel()
+
+    val suggestedCourses = viewModel.getSuggestedCourses()
+    val topicList = viewModel.getTopicsList()
+    val featureCourseList = viewModel.getFeatureCourses()
+
+
     PageInterfaceForHomePage(navController = navController, navControllerHost = navControllerHost, pageNumber = 1) {
         Surface (modifier = Modifier
             .padding(0.dp, 100.dp, 0.dp, 70.dp)
@@ -103,7 +106,7 @@ fun HomePage(navController: NavController, navControllerHost: NavController){
 
                         }
 
-                        LazyGridUnfilledButton()
+                        LazyGridUnfilledButton(topicList)
 
                     }
                 }
@@ -177,9 +180,8 @@ fun FeatureCourseRow(model: FeatureCourseGroupModel){
 }
 
 
-@Preview(showBackground = true)
 @Composable
-fun LazyGridUnfilledButton(){
+fun LazyGridUnfilledButton(topicsList: List<String>){
 
     val colorsOfButton = ColorsOfButton(notNotificationColor, Color.Black)
     val unfilledButton = UnfilledButton(
@@ -221,61 +223,3 @@ fun TopBarHomePage(navController: NavController){
     )
 
 }
-
-fun getTopicsButton(){
-    val topics = listOf(
-        "AI & Future",
-        "Climate Change",
-        "Digital Marketing",
-        "Renewable Energy",
-        "VR & AR",
-        "Post-Pandemic Education",
-        "Blockchain & Crypto",
-        "Space Exploration",
-        "Digital Health",
-        "Global Economy",
-        "Innovation & Entrepreneurship",
-        "Cultural Diversity",
-        "Robotics & Automation",
-        "Biotech & Genetic Engineering",
-        "Digital Art",
-        "Next-Gen Transportation",
-        "Data Privacy & Cybersecurity",
-        "Structured Finance & DeFi",
-        "AI Ethics",
-        "Future Business Models"
-    )
-    topics.forEachIndexed { _, topic ->
-        topicsList.add(topic)
-    }
-}
-
-fun getFeatureCourses(){
-    val featureCourse1 = FeatureCourseGroupModel(image = R.drawable.schen, title = "Example 1", liked = false, price = 100, rating = 4.7F, ratingCount = 130)
-    val featureCourse2 = FeatureCourseGroupModel(image = R.drawable.schen, title = "Example 2", liked = true, price = 120, rating = 4.3F, ratingCount = 571)
-    val featureCourse3 = FeatureCourseGroupModel(image = R.drawable.schen, title = "Example 3", liked = false, price = 80, rating = 4.1F, ratingCount = 239)
-    val featureCourse4 = FeatureCourseGroupModel(image = R.drawable.schen, title = "Example 4", liked = false, price = 700, rating = 5.0F, ratingCount = 982)
-    val featureCourse5 = FeatureCourseGroupModel(image = R.drawable.schen, title = "Example 5", liked = true, price = 102, rating = 4.1F, ratingCount = 101)
-    val featureCourse6 = FeatureCourseGroupModel(image = R.drawable.schen, title = "Example 6", liked = true, price = 10, rating = 3.2F, ratingCount = 1678)
-    featureCourseList.add(featureCourse1)
-    featureCourseList.add(featureCourse2)
-    featureCourseList.add(featureCourse3)
-    featureCourseList.add(featureCourse4)
-    featureCourseList.add(featureCourse5)
-    featureCourseList.add(featureCourse6)
-}
-
-
-fun getInformativeCourses(){
-    val sCourses =  InformativeCourseGroupModel(content = "Global Business Trends and Markets", lessons = 5, hours = 12, minutes = 12, price = 700)
-    val sCourses2 = InformativeCourseGroupModel(content = "Example 2", lessons = 1, hours = 1, minutes = 40, price = 200)
-    val sCourses3 = InformativeCourseGroupModel(content = "Example 3", lessons = 3, hours = 2, minutes = 30, price = 250)
-    val sCourses4 = InformativeCourseGroupModel(content = "Example 4", lessons = 7, hours = 10, minutes = 20, price = 600)
-    val sCourses5 = InformativeCourseGroupModel(content = "Example 5", lessons = 12, hours = 11, minutes = 10, price = 900)
-    suggestedCourses.add(sCourses)
-    suggestedCourses.add(sCourses2)
-    suggestedCourses.add(sCourses3)
-    suggestedCourses.add(sCourses4)
-    suggestedCourses.add(sCourses5)
-}
-
