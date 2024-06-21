@@ -1,4 +1,4 @@
-package com.example.learningassistant.pages
+package com.example.learningassistant.views
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

@@ -29,22 +29,25 @@ import com.example.learningassistant.dataClasses.homePageModels.InformativeCours
 import com.example.learningassistant.interfaceResources.ColorsOfButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconHorizontal
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
-import com.example.learningassistant.pages.TopicText
 import com.example.learningassistant.ui.theme.detailColor
 import com.example.learningassistant.ui.theme.fontSizeDetails
 import com.example.learningassistant.ui.theme.fontSizeHeader
 import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
 import com.example.learningassistant.ui.theme.specialIconColor
+import com.example.learningassistant.views.TopicText
 
 class InformativeCourses {
 
     @Composable
-    fun InformativeCourseHolderRow(backgroundColor: Color, height: Int, heightToPhone: Float,
-                                   upSpacerPadding: Int, bottomSpacerPadding: Int,
-                                   topicTextPadding: Int,
-                                   suggestedCourseList: List<InformativeCourseGroupModel>,
-                                   objectHeight: Dp){
+    fun InformativeCourseHolderRow(
+        backgroundColor: Color, height: Int, heightToPhone: Float,
+        upSpacerPadding: Int, bottomSpacerPadding: Int,
+        topicTextPadding: Int,
+        suggestedCourseList: List<InformativeCourseGroupModel>,
+        objectHeight: Dp
+    )
+    {
         Surface(color = backgroundColor, modifier = Modifier
             .height((height + upSpacerPadding + bottomSpacerPadding).dp)
             .fillMaxHeight(heightToPhone)

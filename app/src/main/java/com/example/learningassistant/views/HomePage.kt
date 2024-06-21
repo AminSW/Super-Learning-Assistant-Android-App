@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.example.learningassistant.pages
+package com.example.learningassistant.views
 
 
 import androidx.compose.foundation.Image
@@ -68,9 +68,9 @@ fun HomePage(navController: NavController, navControllerHost: NavController){
 
     val viewModel: HomePageViewModel = viewModel()
 
-    val suggestedCourses = viewModel.getSuggestedCourses()
-    val topicList = viewModel.getTopicsList()
-    val featureCourseList = viewModel.getFeatureCourses()
+    val suggestedCourses = viewModel.suggestedCourses
+    val topicList = viewModel.topicsList
+    val featureCourseList = viewModel.featureCourseList
 
 
     PageInterfaceForHomePage(navController = navController, navControllerHost = navControllerHost, pageNumber = 1) {

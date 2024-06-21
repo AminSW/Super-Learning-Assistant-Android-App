@@ -5,7 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.learningassistant.pages.WishListPage
+import com.example.learningassistant.views.WishListPage
 
 @Composable
 fun WishListPageNav(navControllerHost: NavController){
