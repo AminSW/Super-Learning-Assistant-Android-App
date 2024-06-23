@@ -1,6 +1,5 @@
 package com.example.learningassistant.accountPageDataClasses
 
-import android.icu.text.ListFormatter.Width
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,8 +26,8 @@ import com.example.learningassistant.dataClasses.homePageModels.InformativeCours
 import com.example.learningassistant.ui.theme.detailColor
 import com.example.learningassistant.ui.theme.fontSizeDetails
 import com.example.learningassistant.ui.theme.fontSizeHuge
-import com.example.learningassistant.ui.theme.fontSizeTopic
 import com.example.learningassistant.ui.theme.fontSizeMainHeader
+import com.example.learningassistant.ui.theme.fontSizeTopic
 
 class Instructor(
     private val name: String,
@@ -114,9 +113,6 @@ class Instructor(
                             objectHeight = 150.dp
                         )
                     }
-
-
-
                 }
             }
         }

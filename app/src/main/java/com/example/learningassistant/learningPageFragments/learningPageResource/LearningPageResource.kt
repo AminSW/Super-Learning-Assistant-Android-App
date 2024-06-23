@@ -18,13 +18,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.learningassistant.BottomBar
+import com.example.learningassistant.interfaceResources.iconHierarchy.ClassicIcon
+import com.example.learningassistant.interfaceResources.iconHierarchy.IconWithButton
 import com.example.learningassistant.ui.theme.detailColor
 
 val mainColor = Color(113,190,130)
@@ -38,18 +39,19 @@ fun TextIconVertical(size: Int, padding: Int, address: Int, iconColor: Color,
                      title: String) {
     var height = size
     if (title.isNotEmpty()) height += 50
+    val icon = ClassicIcon(modifier = Modifier.size(30.dp), address = address, color = iconColor)
     Surface(modifier = Modifier
         .width(size.dp)
         .height(height.dp)
         .padding(padding.dp), color = backgroundColor) {
         Column {
-            IconButton(onClick = { navController?.navigate(nextPage) }, modifier = Modifier.size(40.dp))
+            IconWithButton(
+                icon = icon,
+                modifier = Modifier.size(40.dp),
+            )
             {
-                Icon(modifier = Modifier.size(30.dp),
-                    painter = painterResource(id = address),
-                    contentDescription = null,
-                    tint = iconColor,)
-            }
+                navController?.navigate(nextPage)
+            }.Show()
             Text(text = title, fontSize = 12.sp)
         }
 

@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package com.example.learningassistant.views
 
 
@@ -16,7 +14,6 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.staggeredgrid.LazyHorizontalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,8 +29,8 @@ import com.example.learningassistant.BottomBar
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.homePageModels.FeatureCourseGroupModel
 import com.example.learningassistant.interfaceClasses.InformativeCourses
-import com.example.learningassistant.interfaceResources.ColorsOfButton
-import com.example.learningassistant.interfaceResources.UnfilledButton
+import com.example.learningassistant.interfaceResources.buttonHierarchy.ColorsOfButton
+import com.example.learningassistant.interfaceResources.buttonHierarchy.UnfilledButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.notNotificationColor
 import com.example.learningassistant.ui.theme.backgroundColorClassic
 import com.example.learningassistant.ui.theme.containerColor
@@ -147,7 +144,7 @@ fun FeatureCourseRow(model: FeatureCourseGroupModel){
         shape = RoundedCornerShape(20.dp),
         shadowElevation = 1.dp){
 
-            Column() {
+            Column {
                 Surface(modifier = Modifier.padding(5.dp),
                     shape = RoundedCornerShape(15.dp)){
                     Image(painter = painterResource(model.image), contentDescription = null)

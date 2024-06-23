@@ -1,7 +1,10 @@
-package com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows
+package com.example.learningassistant.interfaceResources.groupRowResources
 
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.unit.dp
 
 class GroupRowBuilder {
     private val viewComponentList = mutableListOf<ViewComponent>()
@@ -15,8 +18,8 @@ class GroupRowBuilder {
         }
     }
 
-    fun addImage(modifier: Modifier, image: Int): GroupRowBuilder {
-        val viewComponent = ImageHolder(modifier, image)
+    fun addImage(modifier: Modifier, image: Int, shape: Shape = RoundedCornerShape(15.dp)): GroupRowBuilder {
+        val viewComponent = ImageHolder(modifier = modifier, image = image, shape = shape)
         viewComponentList.add(viewComponent)
         return this
     }

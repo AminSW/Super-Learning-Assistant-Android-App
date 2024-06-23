@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.learningPageModels.PrivateGroupModel
+import com.example.learningassistant.interfaceResources.groupRowResources.GroupRowBuilder
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconVertical
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.learningPageFragments.learningPageResource.notNotificationColor
@@ -55,7 +56,6 @@ fun PrivateGroupsRow(data: PrivateGroupModel){
 
                 .withColumnViewHolder(modifier = Modifier.fillMaxHeight().width(80.dp))
                 {
-                    println("ilk")
                     TextIconVertical(
                         size = 45,
                         padding = 8,
@@ -66,7 +66,6 @@ fun PrivateGroupsRow(data: PrivateGroupModel){
                 }
                 .withColumnViewHolder(modifier = Modifier.fillMaxHeight().width(80.dp))
                 {
-                    println("ikinci")
                     TextIconVertical(
                         size = 45,
                         padding = 8,

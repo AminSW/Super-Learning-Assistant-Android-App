@@ -1,4 +1,4 @@
-package com.example.learningassistant.interfaceResources
+package com.example.learningassistant.interfaceResources.buttonHierarchy
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable

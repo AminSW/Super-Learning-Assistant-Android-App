@@ -1,8 +1,5 @@
 package com.example.learningassistant.learningPageFragments.learningPages
 
-import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
-import com.example.learningassistant.ui.theme.backgroundColorClassic
-
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
@@ -22,8 +19,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
 import com.example.learningassistant.learningPageFragments.learningPageResource.PageInterfaceForLearningPages
 import com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows.CourseRow
+import com.example.learningassistant.ui.theme.backgroundColorClassic
 
 
 @ExperimentalMaterial3Api
@@ -63,9 +62,7 @@ fun GroupsList(courseList: List<CourseGroupModel>) {
 fun CourseInfoText(fontSize: TextUnit, info: String, fontWeight: FontWeight, color: Color) {
     Text(
         text = info,
-        modifier = Modifier
-            .width(150.dp)
-            .padding(5.dp),
+        modifier = Modifier.width(150.dp).padding(5.dp),
         fontSize = fontSize,
         fontStyle = FontStyle.Normal,
         fontWeight = fontWeight,

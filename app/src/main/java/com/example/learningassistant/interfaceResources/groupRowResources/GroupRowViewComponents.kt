@@ -1,4 +1,4 @@
-package com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows
+package com.example.learningassistant.interfaceResources.groupRowResources
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
@@ -20,6 +21,7 @@ interface ViewComponent {
 
 class ImageHolder(
     private val modifier: Modifier,
+    private val shape: Shape = RoundedCornerShape(15.dp),
     private val image: Int
 ):
     ViewComponent
@@ -28,7 +30,7 @@ class ImageHolder(
     override fun Show() {
         Surface(
             modifier = modifier,
-            shape = RoundedCornerShape(15.dp)
+            shape = shape
         ) {
             Image(painter = painterResource(id = image), contentDescription = null)
         }
@@ -38,19 +40,19 @@ class ImageHolder(
 class TextInfoHolder(
     private val modifier: Modifier
 )
-    :ViewComponent
+    : ViewComponent
 {
 
     private val contentList = mutableStateListOf<@Composable () -> Unit>()
 
     @Composable
     override fun Show() {
-
         Column(
             modifier = modifier,
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceAround
-        ) {
+        )
+        {
             for (content in contentList) {
                 content()
             }
@@ -71,7 +73,7 @@ interface RecursiveViewHolder: ViewComponent
 
 
 class ColumnRecursiveViewHolder(private val modifier: Modifier)
-    :RecursiveViewHolder
+    : RecursiveViewHolder
 {
     private val contentList = mutableStateListOf<@Composable () -> Unit>()
 

@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.learningPageModels.PublicGroupModel
+import com.example.learningassistant.interfaceResources.groupRowResources.GroupRowBuilder
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconVertical
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.learningPageFragments.learningPageResource.notNotificationColor

@@ -19,20 +19,20 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.learningassistant.learningPageFragments.learningPages.CourseInfoText
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
 import com.example.learningassistant.learningPageFragments.learningPageResource.LinearProgressBar
+import com.example.learningassistant.learningPageFragments.learningPages.CourseInfoText
 import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
 
 @Composable
 fun CourseRow(course: CourseGroupModel) {
     Surface(
-        color = containerColor,
         modifier = Modifier
-            .padding(10.dp)
-            .height(130.dp),
+            .height(130.dp)
+            .padding(10.dp),
+        color = containerColor,
         shape = RoundedCornerShape(10.dp),
         shadowElevation = 3.dp
     )
@@ -81,7 +81,8 @@ fun CourseRow(course: CourseGroupModel) {
                         color       = detailColor
                     )
                 }
-                Surface(modifier = Modifier.height(30.dp), color = containerColor) {
+                Surface(modifier = Modifier.height(30.dp), color = containerColor)
+                {
                     LinearProgressBar(course.totalTask, course.completedTask)
                 }
 

@@ -1,4 +1,4 @@
-package com.example.learningassistant.interfaceResources
+package com.example.learningassistant.interfaceResources.buttonHierarchy
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.height
@@ -28,7 +28,7 @@ abstract class ClassicButton(
     roundedShape: Dp,
     padding: Dp
 )
-    :BasicButton
+    : BasicButton
 {
 
     abstract val style: Style;

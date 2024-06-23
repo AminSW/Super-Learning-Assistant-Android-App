@@ -24,7 +24,8 @@ import com.example.learningassistant.dataClasses.homePageModels.InformativeCours
 import com.example.learningassistant.interfaceClasses.CourseImage
 import com.example.learningassistant.interfaceClasses.CourseLessonAndHours
 import com.example.learningassistant.interfaceClasses.CourseMainText
-import com.example.learningassistant.interfaceResources.ColorsOfButton
+import com.example.learningassistant.interfaceResources.buttonHierarchy.ColorsOfButton
+import com.example.learningassistant.interfaceResources.buttonHierarchy.FilledButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.ui.theme.borderColor
 import com.example.learningassistant.ui.theme.detailColor
@@ -78,7 +79,7 @@ fun InstructorCurseObject(
 private fun CoursePriceAndAddToCart(price: Int){
 
     val colorsOfButton = ColorsOfButton(mainColor, mainColor)
-    val filledButton = com.example.learningassistant.interfaceResources.FilledButton(
+    val filledButton = FilledButton(
         colors = colorsOfButton,
         borderSize = 3,
         height = 30.dp,

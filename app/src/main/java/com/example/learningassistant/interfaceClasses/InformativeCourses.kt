@@ -26,7 +26,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
-import com.example.learningassistant.interfaceResources.ColorsOfButton
+import com.example.learningassistant.interfaceResources.buttonHierarchy.ColorsOfButton
+import com.example.learningassistant.interfaceResources.buttonHierarchy.UnfilledButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconHorizontal
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.ui.theme.detailColor
@@ -189,7 +190,7 @@ fun CourseLessonAndHours(lessons: Int, hours: Int, minutes: Int){
 private fun CoursePriceAndEnroll(price: Int){
 
     val colorsOfButton = ColorsOfButton(mainColor, mainColor)
-    val unfilledButton = com.example.learningassistant.interfaceResources.UnfilledButton(
+    val unfilledButton = UnfilledButton(
         colors = colorsOfButton,
         borderSize = 3,
         height = 30.dp,

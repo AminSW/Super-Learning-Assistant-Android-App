@@ -1,7 +1,5 @@
 package com.example.learningassistant.learningPageFragments.learningPages
 
-import com.example.learningassistant.dataClasses.learningPageModels.PrivateGroupModel
-import com.example.learningassistant.ui.theme.backgroundColorClassic
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -10,8 +8,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows.PrivateGroupsRow
+import com.example.learningassistant.dataClasses.learningPageModels.PrivateGroupModel
 import com.example.learningassistant.learningPageFragments.learningPageResource.PageInterfaceForLearningPages
+import com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows.PrivateGroupsRow
+import com.example.learningassistant.ui.theme.backgroundColorClassic
 
 private val privateGroupList = ArrayList<PrivateGroupModel>()
 
@@ -34,6 +34,7 @@ fun PrivateGroupList(privateGroupList: List<PrivateGroupModel>) {
         color = backgroundColorClassic
     )
     {
+        println("Size: "+privateGroupList.size)
         LazyColumn {
             items(privateGroupList.size)
             { index ->
@@ -49,5 +50,5 @@ fun addPrivateGroups(){
     privateGroupList.add(PrivateGroupModel("Example 3", true))
     privateGroupList.add(PrivateGroupModel("Example 4", false))
     privateGroupList.add(PrivateGroupModel("Example 5", true))
-    privateGroupList.add(PrivateGroupModel("Example 6", true))
+//    privateGroupList.add(PrivateGroupModel("Example 6", true))
 }
