@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id ("kotlin-kapt")
+    id ("com.google.dagger.hilt.android") version "2.51.1" apply false
 }
 
 android {
@@ -18,6 +20,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+//        annotationProcessorOptions {
+//            arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+//        }
     }
 
     buildTypes {
@@ -47,6 +53,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -61,6 +71,12 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.media3.common)
+    implementation(libs.androidx.media3.ui)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.exoplayer.dash)
+    implementation(libs.androidx.media3.exoplayer.smoothstreaming)
+    implementation(libs.androidx.media3.exoplayer.hls)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -68,4 +84,33 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+
+
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.28")
+
+
+    implementation ("androidx.media3:media3-exoplayer:1.0.0-beta02")
+    implementation ("androidx.media3:media3-ui:1.0.0-beta02")
+
+    val hiltVersion = "2.51.1"
+
+    // Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    //kapt("androidx.hilt:hilt-compiler:1.1.0") // Remains the same
+    //implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+
+    implementation ("com.google.dagger:hilt-android:$hiltVersion")
+    kapt ("com.google.dagger:hilt-compiler:$hiltVersion")
+
+    // For instrumentation tests
+    androidTestImplementation  ("com.google.dagger:hilt-android-testing:$hiltVersion")
+    kaptAndroidTest ("com.google.dagger:hilt-compiler:$hiltVersion")
+
+    // For local unit tests
+    testImplementation ("com.google.dagger:hilt-android-testing:$hiltVersion")
+    kaptTest ("com.google.dagger:hilt-compiler:$hiltVersion")
 }
