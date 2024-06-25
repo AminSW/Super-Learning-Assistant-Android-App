@@ -1,21 +1,17 @@
 package com.example.learningassistant
 
-import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.learningassistant.navigations.MainNav
 import com.example.learningassistant.ui.theme.LearningAssistantTheme
-import com.example.learningassistant.videoPlayer.youtubeVideoPlayer3.YouTubePlayer
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,26 +24,30 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 )
                 {
+
                     //Player()
                     //VideoPlayer()
-                    //MainNav()
-                    val videoUri =
-                         Uri.parse("android.resource://com.mkrdeveloper.videoplayercompose/raw/sample")
-                    val videoUrl =
-                        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-
-                    Column {
-                        YouTubePlayer(
-                            youtubeVideoId = "oMfuX_bhrDw",
-                            lifecycleOwner = LocalLifecycleOwner.current
-                        )
+                    MainNav()
+//                    val videoUri =
+//                         Uri.parse("android.resource://com.mkrdeveloper.videoplayercompose/raw/sample")
+//                    val videoUrl =
+//                        "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+//
+//                    Column {
+//                        YouTubePlayer(
+//                            youtubeVideoId = "oMfuX_bhrDw",
+//                            lifecycleOwner = LocalLifecycleOwner.current
+//                        )
 //                        Spacer(modifier = Modifier.height(16.dp))
 //                        VideoPlayer(videoUri = videoUri)
                         //VideoPlayerExo(videoUrl =videoUrl)
-                    }
+
                 }
+
             }
+
         }
+
     }
 }
 

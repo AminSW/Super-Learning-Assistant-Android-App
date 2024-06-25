@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,13 +19,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
 import com.example.learningassistant.learningPageFragments.learningPageResource.LinearProgressBar
 import com.example.learningassistant.learningPageFragments.learningPages.CourseInfoText
 import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
+import com.example.learningassistant.ui.theme.textUnitScheme
 
 @Composable
 fun CourseRow(course: CourseGroupModel) {
@@ -62,7 +63,7 @@ fun CourseRow(course: CourseGroupModel) {
                     color = containerColor)
                 {
                     CourseInfoText(
-                        fontSize    = 17.sp,
+                        fontSize    = MaterialTheme.textUnitScheme.fontSizeInfo,
                         info        = course.groupName,
                         fontWeight  = FontWeight.Bold,
                         color       = Color.Unspecified
@@ -75,7 +76,7 @@ fun CourseRow(course: CourseGroupModel) {
                 )
                 {
                     CourseInfoText(
-                        fontSize    = 14.sp,
+                        fontSize    = MaterialTheme.textUnitScheme.fontSizeDetails,
                         info        = course.teacher,
                         fontWeight  = FontWeight.SemiBold,
                         color       = detailColor

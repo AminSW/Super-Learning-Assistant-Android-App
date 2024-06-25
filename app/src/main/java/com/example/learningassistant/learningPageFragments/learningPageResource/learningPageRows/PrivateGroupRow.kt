@@ -8,13 +8,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.learningPageModels.PrivateGroupModel
 import com.example.learningassistant.interfaceResources.groupRowResources.GroupRowBuilder
@@ -22,6 +22,7 @@ import com.example.learningassistant.learningPageFragments.learningPageResource.
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.learningPageFragments.learningPageResource.notNotificationColor
 import com.example.learningassistant.ui.theme.containerColor
+import com.example.learningassistant.ui.theme.textUnitScheme
 
 
 @Composable
@@ -48,7 +49,7 @@ fun PrivateGroupsRow(data: PrivateGroupModel){
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
-                        Text(text = title, fontSize = 25.sp)
+                        Text(text = title, fontSize = MaterialTheme.textUnitScheme.fontSizeMainHeader)
                     }
                 }
                 .addText()

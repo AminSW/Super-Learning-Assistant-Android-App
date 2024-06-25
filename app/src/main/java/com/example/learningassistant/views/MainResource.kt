@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -26,14 +27,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.learningassistant.BottomBar
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconVertical
 import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
-import com.example.learningassistant.ui.theme.fontSizeMainHeader
 import com.example.learningassistant.ui.theme.fontSizeMini
+import com.example.learningassistant.ui.theme.textUnitScheme
 import com.example.mylearningasistant4.InterfaceCreator
 
 private val interfaceCreator = InterfaceCreator()
@@ -119,7 +119,7 @@ fun FilledButton(borderColor: Color, borderSize: Int, context: String, contextCo
 @Composable
 fun TopicText(text: String, padding: Int){
     Text(text = text,
-        fontSize = fontSizeMainHeader,
+        fontSize = MaterialTheme.textUnitScheme.fontSizeMainHeader,
         modifier = Modifier.padding(padding.dp),
         fontWeight = FontWeight.W700)
 }
@@ -127,7 +127,7 @@ fun TopicText(text: String, padding: Int){
 @Composable
 fun DetailText(text: String, padding: Int){
     Text(text = text,
-        fontSize = 22.sp,
+        fontSize = MaterialTheme.textUnitScheme.fontSizeNews,
         modifier = Modifier.padding(padding.dp),
         fontWeight = FontWeight.W700,
         color = detailColor)

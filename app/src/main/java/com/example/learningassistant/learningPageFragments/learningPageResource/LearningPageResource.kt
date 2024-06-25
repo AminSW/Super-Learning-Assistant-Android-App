@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -27,6 +28,7 @@ import com.example.learningassistant.BottomBar
 import com.example.learningassistant.interfaceResources.iconHierarchy.ClassicIcon
 import com.example.learningassistant.interfaceResources.iconHierarchy.IconWithButton
 import com.example.learningassistant.ui.theme.detailColor
+import com.example.learningassistant.ui.theme.textUnitScheme
 
 val mainColor = Color(113,190,130)
 val notNotificationColor = Color(181, 181, 181)
@@ -52,7 +54,7 @@ fun TextIconVertical(size: Int, padding: Int, address: Int, iconColor: Color,
             {
                 navController?.navigate(nextPage)
             }.Show()
-            Text(text = title, fontSize = 12.sp)
+            Text(text = title, fontSize = MaterialTheme.textUnitScheme.fontSizeMini)
         }
 
     }
@@ -94,18 +96,18 @@ fun LinearProgressBar(totalTask: Int, completedTask: Int){
     Column(Modifier.padding(5.dp, 0.dp, 0.dp, 0.dp)) {
         Row {
             Text(text = "$completedTask",
-                fontSize = 15.sp,
+                fontSize = MaterialTheme.textUnitScheme.fontSizeDetails,
                 fontWeight = FontWeight.SemiBold,
                 color = detailColor)
             Text(text = "/$totalTask",
-                fontSize = 15.sp,
+                fontSize = MaterialTheme.textUnitScheme.fontSizeDetails,
                 modifier = Modifier.width(60.dp),
                 fontWeight = FontWeight.SemiBold)
 
             Spacer(modifier = Modifier.padding(80.dp, 0.dp, 0.dp, 0.dp))
 
             Text(text = (progress*100).toInt().toString()+"%",
-                fontSize = 15.sp,
+                fontSize = MaterialTheme.textUnitScheme.fontSizeDetails,
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.width(60.dp),
                 textAlign = TextAlign.End)
