@@ -1,6 +1,5 @@
 package com.example.learningassistant.views
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -9,9 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -32,9 +28,7 @@ import com.example.learningassistant.BottomBar
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconVertical
 import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
-import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.textUnitScheme
-import com.example.mylearningasistant4.InterfaceCreator
 
 private val interfaceCreator = InterfaceCreator()
 
@@ -81,40 +75,6 @@ fun PageInterfaceClassic(
     }
 }
 
-
-@Composable
-fun UnfilledButton(borderColor: Color, borderSize: Int, context: String, contextColor: Color, height: Dp, roundedShape: Dp, padding: Int) {
-    Button(
-        onClick = {},
-        border = BorderStroke(borderSize.dp, borderColor),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = Color.White,
-            contentColor = contextColor
-        ),
-        shape = RoundedCornerShape(20.dp),
-        modifier = Modifier.height(height).padding(padding.dp)
-    ) {
-        Text(text = context, fontSize = fontSizeMini)
-    }
-}
-
-@Composable
-fun FilledButton(borderColor: Color, borderSize: Int, context: String, contextColor: Color, height: Dp, roundedShape: Dp, padding: Int) {
-
-    Button(
-        onClick = {},
-        border = BorderStroke(borderSize.dp, borderColor),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = contextColor,
-            contentColor = contextColor
-        ),
-        shape = RoundedCornerShape(20.dp),
-        modifier = Modifier.height(height).padding(padding.dp)
-    )
-    {
-        Text(text = context, fontSize = fontSizeMini, color = Color.White)
-    }
-}
 
 @Composable
 fun TopicText(text: String, padding: Int){

@@ -14,6 +14,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.staggeredgrid.LazyHorizontalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,10 +36,8 @@ import com.example.learningassistant.learningPageFragments.learningPageResource.
 import com.example.learningassistant.ui.theme.backgroundColorClassic
 import com.example.learningassistant.ui.theme.containerColor
 import com.example.learningassistant.ui.theme.detailColor
-import com.example.learningassistant.ui.theme.fontSizeDetails
-import com.example.learningassistant.ui.theme.fontSizeHeader
-import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
+import com.example.learningassistant.ui.theme.textUnitScheme
 import com.example.learningassistant.viewModels.HomePageViewModel
 
 private val interfaceCreator = InterfaceCreator()
@@ -157,15 +156,15 @@ fun FeatureCourseRow(model: FeatureCourseGroupModel){
 
                         Surface(modifier = Modifier.width(160.dp), color = Color.Unspecified) {
                             Row {
-                                Text(text = model.title, fontSize = fontSizeHeader, fontWeight = FontWeight.W700)
+                                Text(text = model.title, fontSize = MaterialTheme.textUnitScheme.fontSizeHeader, fontWeight = FontWeight.W700)
                             }
                         }
 
 
                         Surface(modifier = Modifier.fillMaxWidth(), color = Color.Unspecified) {
                             Row(horizontalArrangement = Arrangement.SpaceBetween) {
-                                Text(text = "$${model.price}", fontSize = fontSizeDetails, fontWeight = FontWeight.W800, color = priceColor)
-                                Text(text = "${model.rating} (${model.ratingCount})", fontSize = fontSizeDetails, fontWeight = FontWeight.W800, color = detailColor)
+                                Text(text = "$${model.price}", fontSize = MaterialTheme.textUnitScheme.fontSizeDetails, fontWeight = FontWeight.W800, color = priceColor)
+                                Text(text = "${model.rating} (${model.ratingCount})", fontSize = MaterialTheme.textUnitScheme.fontSizeDetails, fontWeight = FontWeight.W800, color = detailColor)
                             }
                         }
 
@@ -195,7 +194,7 @@ fun LazyGridUnfilledButton(topicsList: List<String>){
             content = {
                 items(topicsList.size) {index ->
                     unfilledButton.Show {
-                        Text(text = topicsList[index], fontSize = fontSizeMini)
+                        Text(text = topicsList[index], fontSize = MaterialTheme.textUnitScheme.fontSizeMini)
                     }
                 }
             }

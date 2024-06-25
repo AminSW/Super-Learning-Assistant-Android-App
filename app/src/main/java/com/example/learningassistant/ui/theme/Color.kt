@@ -1,7 +1,6 @@
 package com.example.learningassistant.ui.theme
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.sp
 
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
@@ -18,10 +17,3 @@ val specialIconColor = Color(252, 173, 32)
 val priceColor = Color(72,78,91)
 val detailColor = Color(100,104,116)
 val borderColor = Color(153, 153, 155)
-
-val fontSizeMini = 13.sp
-val fontSizeDetails = 15.sp
-val fontSizeHeader = 19.sp
-val fontSizeTopic = 18.sp
-val fontSizeHuge = 20.sp
-val fontSizeMainHeader = 25.sp

@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,11 +32,9 @@ import com.example.learningassistant.interfaceResources.buttonHierarchy.Unfilled
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconHorizontal
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.ui.theme.detailColor
-import com.example.learningassistant.ui.theme.fontSizeDetails
-import com.example.learningassistant.ui.theme.fontSizeHeader
-import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
 import com.example.learningassistant.ui.theme.specialIconColor
+import com.example.learningassistant.ui.theme.textUnitScheme
 import com.example.learningassistant.views.TopicText
 
 class InformativeCourses {
@@ -159,7 +158,7 @@ fun CourseTextIcon(icon: Int, iconColor: Color, text: String){
         navController = null,
         nextPage = "",
         title = text,
-        fontSize = fontSizeDetails.value.toInt(),
+        fontSize = MaterialTheme.textUnitScheme.fontSizeDetails.value.toInt(),
         fontWeight = FontWeight.W600,
         color = detailColor
     )
@@ -168,7 +167,7 @@ fun CourseTextIcon(icon: Int, iconColor: Color, text: String){
 @Composable
 fun CourseMainText(content: String){
     Text(text = content,
-        fontSize = fontSizeHeader,
+        fontSize = MaterialTheme.textUnitScheme.fontSizeHeader,
         fontWeight = FontWeight.W700,
         modifier = Modifier.padding(10.dp, 5.dp))
 }
@@ -203,10 +202,10 @@ private fun CoursePriceAndEnroll(price: Int){
         .padding(10.dp, 0.dp, 10.dp, 0.dp),
         color = Color.Unspecified) {
         Row (horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
-            Text(text = "$$price", color = priceColor, fontSize = fontSizeDetails, fontWeight = FontWeight.W700)
+            Text(text = "$$price", color = priceColor, fontSize = MaterialTheme.textUnitScheme.fontSizeDetails, fontWeight = FontWeight.W700)
             //UnfilledButton(borderColor = mainColor, 3, context = "Enroll Now", mainColor, 30.dp, 15.dp, 0)
             unfilledButton.Show {
-                Text(text = "Enroll Now", fontSize = fontSizeMini)
+                Text(text = "Enroll Now", fontSize = MaterialTheme.textUnitScheme.fontSizeMini)
             }
         }
     }

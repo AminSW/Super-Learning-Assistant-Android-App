@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,10 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.example.learningassistant.R
 import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
 import com.example.learningassistant.ui.theme.detailColor
-import com.example.learningassistant.ui.theme.fontSizeDetails
-import com.example.learningassistant.ui.theme.fontSizeHuge
-import com.example.learningassistant.ui.theme.fontSizeMainHeader
-import com.example.learningassistant.ui.theme.fontSizeTopic
+import com.example.learningassistant.ui.theme.textUnitScheme
 
 class Instructor(
     private val name: String,
@@ -46,7 +44,7 @@ class Instructor(
                 painter = painterResource(id = R.drawable.ic_launcher_background),
                 contentDescription = null
             )
-            Text(text = name, fontSize = fontSizeMainHeader, fontWeight = FontWeight.W700)
+            Text(text = name, fontSize = MaterialTheme.textUnitScheme.fontSizeMainHeader, fontWeight = FontWeight.W700)
             miniBio.ShowText()
             
             Spacer(modifier = Modifier.padding(12.dp))
@@ -57,31 +55,31 @@ class Instructor(
                 {
                     NumberAndInfo(
                         number = courses,
-                        sizeNum = fontSizeMainHeader,
+                        sizeNum = MaterialTheme.textUnitScheme.fontSizeMainHeader,
                         fontWeightNum = FontWeight.W700,
 
                         info = "Courses",
-                        sizeInfo = fontSizeDetails,
+                        sizeInfo = MaterialTheme.textUnitScheme.fontSizeDetails,
 
                         height = 50.dp
                     )
                     NumberAndInfo(
                         number = totalStudent,
-                        sizeNum = fontSizeMainHeader,
+                        sizeNum = MaterialTheme.textUnitScheme.fontSizeMainHeader,
                         fontWeightNum = FontWeight.W700,
 
                         info = "Total Student",
-                        sizeInfo = fontSizeDetails,
+                        sizeInfo = MaterialTheme.textUnitScheme.fontSizeDetails,
 
                         height = 50.dp
                     )
                     NumberAndInfo(
                         number = review,
-                        sizeNum = fontSizeMainHeader,
+                        sizeNum = MaterialTheme.textUnitScheme.fontSizeMainHeader,
                         fontWeightNum = FontWeight.W700,
 
                         info = "Review",
-                        sizeInfo = fontSizeDetails,
+                        sizeInfo = MaterialTheme.textUnitScheme.fontSizeDetails,
 
                         height = 100.dp
                     )
@@ -92,9 +90,9 @@ class Instructor(
             {
                 Column(verticalArrangement = Arrangement.SpaceBetween)
                 {
-                    Text(text = "About Instructor", fontSize = fontSizeHuge, fontWeight = FontWeight.W700)
+                    Text(text = "About Instructor", fontSize = MaterialTheme.textUnitScheme.fontSizeHuge, fontWeight = FontWeight.W700)
                     Spacer(modifier = Modifier.padding(10.dp))
-                    aboutInstructor.ShowText(detailColor, fontSizeTopic)
+                    aboutInstructor.ShowText(detailColor, MaterialTheme.textUnitScheme.fontSizeTopic)
                 }
             }
 

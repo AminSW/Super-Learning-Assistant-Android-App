@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,9 +30,8 @@ import com.example.learningassistant.interfaceResources.buttonHierarchy.FilledBu
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor
 import com.example.learningassistant.ui.theme.borderColor
 import com.example.learningassistant.ui.theme.detailColor
-import com.example.learningassistant.ui.theme.fontSizeDetails
-import com.example.learningassistant.ui.theme.fontSizeMini
 import com.example.learningassistant.ui.theme.priceColor
+import com.example.learningassistant.ui.theme.textUnitScheme
 
 
 @Composable
@@ -94,9 +94,9 @@ private fun CoursePriceAndAddToCart(price: Int){
         color = Color.Unspecified)
     {
         Row (horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
-            Text(text = "$$price", color = priceColor, fontSize = fontSizeDetails, fontWeight = FontWeight.W700)
+            Text(text = "$$price", color = priceColor, fontSize = MaterialTheme.textUnitScheme.fontSizeDetails, fontWeight = FontWeight.W700)
             filledButton.Show {
-                Text(text = "Add To Cart", fontSize = fontSizeMini)
+                Text(text = "Add To Cart", fontSize = MaterialTheme.textUnitScheme.fontSizeMini)
             }
         }
     }
