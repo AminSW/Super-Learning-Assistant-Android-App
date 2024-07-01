@@ -58,7 +58,7 @@ class InformativeCourses {
                 TopicText(text = "Suggested Courses", topicTextPadding)
 
                 LazyRow {
-                    items(suggestedCourseList.size){index ->
+                    items(suggestedCourseList.size) { index ->
 
                         InformativeCourseObject(model = suggestedCourseList[index], objectHeight)
 

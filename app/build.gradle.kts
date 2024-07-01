@@ -113,4 +113,8 @@ dependencies {
     // For local unit tests
     testImplementation ("com.google.dagger:hilt-android-testing:$hiltVersion")
     kaptTest ("com.google.dagger:hilt-compiler:$hiltVersion")
+
+    // Material extend Icons
+
+    implementation ("androidx.compose.material:material-icons-extended:1.6.8")
 }

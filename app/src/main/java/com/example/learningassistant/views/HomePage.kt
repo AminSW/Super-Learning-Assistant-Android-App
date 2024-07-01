@@ -73,6 +73,7 @@ fun HomePage(navController: NavController, navControllerHost: NavController){
         Surface (modifier = Modifier
             .padding(0.dp, 100.dp, 0.dp, 70.dp)
             .fillMaxHeight()){
+
             Column(verticalArrangement = Arrangement.Top) {
 
                 suggestedCourseOperator.InformativeCourseHolderRow(
@@ -188,7 +189,8 @@ fun LazyGridUnfilledButton(topicsList: List<String>){
         padding = 5.dp
         )
     Surface(modifier = Modifier.padding(0.dp, 10.dp), color = Color.Unspecified) {
-        LazyHorizontalStaggeredGrid(rows = StaggeredGridCells.Fixed(2),
+        LazyHorizontalStaggeredGrid(
+            rows = StaggeredGridCells.Fixed(2),
             horizontalItemSpacing = 4.dp,
             verticalArrangement = Arrangement.spacedBy(5.dp),
             content = {

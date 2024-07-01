@@ -101,5 +101,15 @@ class UnfilledButton(
             content()
         }
     }
+
+    @Composable
+    fun Show( modifier: Modifier, content: @Composable () -> Unit,) {
+        buttonObject.style(style)
+        buttonObject.colors(colors)
+        buttonObject.modifier(modifier)
+        super.Show{
+            content()
+        }
+    }
 }
 
