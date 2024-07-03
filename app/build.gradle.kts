@@ -77,6 +77,7 @@ dependencies {
     implementation(libs.androidx.media3.exoplayer.dash)
     implementation(libs.androidx.media3.exoplayer.smoothstreaming)
     implementation(libs.androidx.media3.exoplayer.hls)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -116,5 +117,5 @@ dependencies {
 
     // Material extend Icons
 
-    implementation ("androidx.compose.material:material-icons-extended:1.6.8")
+    implementation (libs.androidx.material.icons.extended)
 }

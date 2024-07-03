@@ -4,23 +4,34 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.learningassistant.views.CoursePage
 
 @Composable
-fun MainNav(){
+fun MainNav()
+{
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "HomePage"){
-        composable(route = "LearningPage"){
+
+    NavHost(navController = navController, startDestination = "CoursePage")
+    {
+        composable(route = "LearningPage")
+        {
             LearningPageNav(navController)
         }
-        composable(route = "HomePage"){
+        composable(route = "HomePage")
+        {
             HomePageNav(navController)
         }
-        composable(route = "WishListPage"){
+        composable(route = "WishListPage")
+        {
             WishListPageNav(navController)
         }
-        composable(route = "AccountPage"){
+        composable(route = "AccountPage")
+        {
             AccountPageNav(navController)
         }
-
+        composable(route = "CoursePage")
+        {
+            CoursePage()
+        }
     }
 }
