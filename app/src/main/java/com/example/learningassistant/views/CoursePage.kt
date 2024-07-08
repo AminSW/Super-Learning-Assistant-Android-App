@@ -42,14 +42,13 @@ import com.example.learningassistant.ui.theme.textUnitScheme
 @Composable
 fun CoursePage()
 {
-
-
     Surface(
         onClick = { /*TODO*/ },
         modifier = Modifier
             .fillMaxSize(),
     )
     {
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -119,13 +118,12 @@ fun DetailScreen()
                 CircleProgressBar(totalTask = 349273123, completedTask = 231311222)
             }
 
-            Surface {
-
+            Surface()
+            {
                 SwipeableTabRow(tabItemList = tabItems)
             }
 
         }
-
     }
 }
 
@@ -170,7 +168,6 @@ fun CircleProgressBar(totalTask: Int, completedTask: Int)
             verticalAlignment = Alignment.CenterVertically
         )
         {
-
             Surface(
                 modifier = Modifier
                     .fillMaxWidth(0.8f)

@@ -1,4 +1,4 @@
-package com.example.learningassistant.dataClasses.learningPageModels
+package com.example.learningassistant.data.dataClasses.learningPageModels
 
 data class PublicGroupModel(
     val groupName: String,

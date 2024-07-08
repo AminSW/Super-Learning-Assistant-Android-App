@@ -2,8 +2,8 @@ package com.example.learningassistant.viewModels
 
 import androidx.lifecycle.ViewModel
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.homePageModels.FeatureCourseGroupModel
-import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.FeatureCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.InformativeCourseGroupModel
 
 class HomePageViewModel : ViewModel() {
 

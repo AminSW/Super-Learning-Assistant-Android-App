@@ -1,6 +1,6 @@
 package com.example.learningassistant.learningPageFragments.learningPages
 
-import com.example.learningassistant.dataClasses.learningPageModels.PublicGroupModel
+import com.example.learningassistant.data.dataClasses.learningPageModels.PublicGroupModel
 import com.example.learningassistant.ui.theme.backgroundColorClassic
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding

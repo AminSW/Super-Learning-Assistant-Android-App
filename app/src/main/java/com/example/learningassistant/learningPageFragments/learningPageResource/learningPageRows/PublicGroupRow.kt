@@ -16,7 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.learningPageModels.PublicGroupModel
+import com.example.learningassistant.data.dataClasses.learningPageModels.PublicGroupModel
 import com.example.learningassistant.interfaceResources.groupRowResources.GroupRowBuilder
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconVertical
 import com.example.learningassistant.learningPageFragments.learningPageResource.mainColor

@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id ("kotlin-kapt")
     id ("com.google.dagger.hilt.android") version "2.51.1" apply false
+    id ("org.jetbrains.kotlin.plugin.serialization") version "1.8.10" apply true
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -118,4 +120,28 @@ dependencies {
     // Material extend Icons
 
     implementation (libs.androidx.material.icons.extended)
+
+
+    implementation (libs.ktor.client.core)
+    implementation (libs.ktor.client.android)
+    implementation (libs.ktor.client.serialization)
+    implementation (libs.ktor.client.logging)
+    implementation (libs.logback.classic)
+
+
+    implementation(libs.kotlinx.serialization.json)
+
+
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
 }

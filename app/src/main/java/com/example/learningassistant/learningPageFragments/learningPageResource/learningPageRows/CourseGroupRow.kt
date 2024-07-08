@@ -20,7 +20,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
+import com.example.learningassistant.data.dataClasses.learningPageModels.CourseGroupModel
 import com.example.learningassistant.learningPageFragments.learningPageResource.LinearProgressBar
 import com.example.learningassistant.learningPageFragments.learningPages.CourseInfoText
 import com.example.learningassistant.ui.theme.containerColor

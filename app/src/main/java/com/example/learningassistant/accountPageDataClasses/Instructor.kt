@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.InformativeCourseGroupModel
 import com.example.learningassistant.ui.theme.detailColor
 import com.example.learningassistant.ui.theme.textUnitScheme
 

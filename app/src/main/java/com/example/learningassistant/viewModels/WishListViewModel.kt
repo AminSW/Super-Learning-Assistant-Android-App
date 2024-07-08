@@ -1,7 +1,7 @@
 package com.example.learningassistant.viewModels
 
 import androidx.lifecycle.ViewModel
-import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.InformativeCourseGroupModel
 
 class WishListViewModel: ViewModel() {
 

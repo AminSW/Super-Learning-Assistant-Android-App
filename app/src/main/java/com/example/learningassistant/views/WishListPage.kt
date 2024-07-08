@@ -13,7 +13,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.learningassistant.BottomBar
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.InformativeCourseGroupModel
 import com.example.learningassistant.interfaceClasses.InformativeCourses
 import com.example.learningassistant.ui.theme.backgroundColorClassic
 import com.example.learningassistant.viewModels.WishListViewModel

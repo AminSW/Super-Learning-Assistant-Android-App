@@ -1,4 +1,4 @@
-package com.example.learningassistant.dataClasses.homePageModels
+package com.example.learningassistant.data.dataClasses.homePageModels
 
 data class InformativeCourseGroupModel(
     val content: String,

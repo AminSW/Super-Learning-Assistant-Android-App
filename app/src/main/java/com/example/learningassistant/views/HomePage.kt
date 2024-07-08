@@ -28,7 +28,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.learningassistant.BottomBar
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.homePageModels.FeatureCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.FeatureCourseGroupModel
 import com.example.learningassistant.interfaceClasses.InformativeCourses
 import com.example.learningassistant.interfaceResources.buttonHierarchy.ColorsOfButton
 import com.example.learningassistant.interfaceResources.buttonHierarchy.UnfilledButton

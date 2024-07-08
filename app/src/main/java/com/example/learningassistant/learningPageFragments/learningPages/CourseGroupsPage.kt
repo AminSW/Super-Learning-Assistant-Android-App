@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.learningassistant.dataClasses.learningPageModels.CourseGroupModel
+import com.example.learningassistant.data.dataClasses.learningPageModels.CourseGroupModel
 import com.example.learningassistant.learningPageFragments.learningPageResource.PageInterfaceForLearningPages
 import com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows.CourseRow
 import com.example.learningassistant.ui.theme.backgroundColorClassic

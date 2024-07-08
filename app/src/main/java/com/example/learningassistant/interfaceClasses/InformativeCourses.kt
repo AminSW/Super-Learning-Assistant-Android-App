@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.learningassistant.R
-import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.InformativeCourseGroupModel
 import com.example.learningassistant.interfaceResources.buttonHierarchy.ColorsOfButton
 import com.example.learningassistant.interfaceResources.buttonHierarchy.UnfilledButton
 import com.example.learningassistant.learningPageFragments.learningPageResource.TextIconHorizontal
@@ -70,8 +70,8 @@ class InformativeCourses {
     }
     @Composable
     fun InformativeCourseHolderColumn(backgroundColor: Color, with: Int,
-                                   upSpacerPadding: Int, bottomSpacerPadding: Int,
-                                   suggestedCourseList: List<InformativeCourseGroupModel>,
+                                      upSpacerPadding: Int, bottomSpacerPadding: Int,
+                                      suggestedCourseList: List<InformativeCourseGroupModel>,
                                       objectHeight: Dp){
         Surface(color = backgroundColor, modifier = Modifier
             .width((with + upSpacerPadding + bottomSpacerPadding).dp)

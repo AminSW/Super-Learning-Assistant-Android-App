@@ -1,4 +1,4 @@
-package com.example.learningassistant.dataClasses
+package com.example.learningassistant.data.dataClasses
 
 data class CourseDetailModel(
     private val title: String,

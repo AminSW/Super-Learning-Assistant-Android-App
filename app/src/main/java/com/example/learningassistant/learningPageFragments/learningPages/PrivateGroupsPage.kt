@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.learningassistant.dataClasses.learningPageModels.PrivateGroupModel
+import com.example.learningassistant.data.dataClasses.learningPageModels.PrivateGroupModel
 import com.example.learningassistant.learningPageFragments.learningPageResource.PageInterfaceForLearningPages
 import com.example.learningassistant.learningPageFragments.learningPageResource.learningPageRows.PrivateGroupsRow
 import com.example.learningassistant.ui.theme.backgroundColorClassic

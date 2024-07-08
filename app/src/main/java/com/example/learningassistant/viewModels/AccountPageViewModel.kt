@@ -3,7 +3,7 @@ package com.example.learningassistant.viewModels
 import androidx.lifecycle.ViewModel
 import com.example.learningassistant.accountPageDataClasses.Instructor
 import com.example.learningassistant.accountPageDataClasses.LimitedString
-import com.example.learningassistant.dataClasses.homePageModels.InformativeCourseGroupModel
+import com.example.learningassistant.data.dataClasses.homePageModels.InformativeCourseGroupModel
 class AccountPageViewModel : ViewModel() {
 
     private val _suggestedCourses = listOf(
